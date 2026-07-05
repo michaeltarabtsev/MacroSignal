@@ -1,0 +1,13 @@
+torch
+transformers
+yfinance
+pandas
+numpy
+matplotlib
+requests
+beautifulsoup4
+scipy
+ipywidgets
+newsapi-python
+sentencepiece
+streamlit
