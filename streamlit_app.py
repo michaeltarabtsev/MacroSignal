@@ -571,7 +571,14 @@ st.sidebar.markdown("""**Run order:**
 5. FOMC Backtest (standalone)
 """)
 st.sidebar.markdown("---")
-st.sidebar.caption("Built by Misha · Warwick University")
+st.sidebar.markdown("""
+<div style='font-size:12px;color:#64748b;'>
+    Built by <strong style='color:#94a3b8;'>Misha Tarabtsev</strong><br>
+    <a href='https://www.linkedin.com/in/michael-tarabtsev-087ba9390/'
+       target='_blank'
+       style='color:#38bdf8;text-decoration:none;'>LinkedIn →</a>
+</div>
+""", unsafe_allow_html=True)
 
 if "macro_score" not in st.session_state:
     st.session_state.macro_score = 0.0
@@ -1026,7 +1033,7 @@ if section == "1️⃣  Macro Regime Analyser":
     st.markdown("""
     <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid #1e293b;
             font-size:11px;color:#334155;display:flex;justify-content:space-between;">
-      <span>MacroSignal · Built by Misha · Warwick University</span>
+      <span>MacroSignal · Built by Misha Tarabtsev</span>
       <span>Three-layer NLP: Zero-Shot NLI · Keyword Lexicon · FinBERT</span>
     </div>
     """, unsafe_allow_html=True)
