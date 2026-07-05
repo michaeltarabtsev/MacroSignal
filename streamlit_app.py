@@ -563,6 +563,7 @@ section = st.sidebar.radio("Navigate", [
     "2️⃣  Trade Signal Generator",
     "3️⃣  Position Journal",
     "4️⃣  Portfolio Dashboard",
+    "5️⃣  FOMC Backtest",
 ])
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
@@ -571,6 +572,7 @@ st.sidebar.markdown("""
 2. Trade Signal Generator  
 3. Position Journal
 4. Portfolio Dashboard
+5. FOMC Backtest (standalone)
 """)
 st.sidebar.markdown("---")
 st.sidebar.caption("Built by Misha · Warwick University")
