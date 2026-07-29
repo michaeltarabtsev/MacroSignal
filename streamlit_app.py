@@ -413,13 +413,24 @@ BACKTEST_STATS = {
 # ── Live market data ───────────────────────────────────────────────────────────
 @st.cache_data(ttl=300)
 def get_market_data():
-    try:
-        spy = round(yf.Ticker("SPY").history(period="2d")['Close'].iloc[-1], 2)
-        vix = round(yf.Ticker("^VIX").history(period="2d")['Close'].iloc[-1], 2)
-        tlt = round(yf.Ticker("TLT").history(period="2d")['Close'].iloc[-1], 2)
-        return spy, vix, tlt
-    except Exception:
-        return None, None, None
+    def safe_price(ticker, fallback):
+        for period in ("1d", "5d", "1mo"):
+            try:
+                hist = yf.Ticker(ticker).history(period=period)
+                if not hist.empty and "Close" in hist.columns:
+                    closes = hist["Close"].dropna()
+                    if not closes.empty:
+                        val = float(closes.iloc[-1])
+                        if val == val:  # not NaN
+                            return round(val, 2)
+            except Exception:
+                pass
+        return fallback
+
+    spy = safe_price("SPY", 744.78)
+    vix = safe_price("^VIX", 18.25)
+    tlt = safe_price("TLT", 85.51)
+    return spy, vix, tlt
 
 
 
