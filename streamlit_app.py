@@ -443,8 +443,7 @@ BASE_CAPITAL     = 1_000_000
 CONFIDENCE_FLOOR = 0.60
 HEADERS = ["Timestamp","Ticker","Direction","Entry_Price",
            "Allocation_Weight_Pct","Notional_Size_USD","Execution_Cost_USD"]
-NEWS_API_KEY = st.secrets.get("NEWS_API_KEY","") if hasattr(st,"secrets") else ""
-
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
 ASSET_POOL = {
     "FIXED_INCOME":{"Class":"Sovereign Fixed Income","Candidates":[
         {"Ticker":"ZT=F","Desc":"2-Year Treasury Futures","Keywords":["rate","fed","fomc","powell","hike","cut","central bank","monetary"],"regime_bias":"hawkish"},
