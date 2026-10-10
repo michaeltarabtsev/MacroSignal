@@ -43,7 +43,7 @@ st.markdown("""
     background-color: #0a0f1e;
     color: #e2e8f0;
   }
-  .block-container { padding: 2rem 3rem; max-width: 1200px; }
+  .block-container { padding: 4rem 3rem 2rem 3rem; max-width: 1200px; }
 
   /* Header */
   .ms-header {
@@ -235,7 +235,6 @@ st.markdown("""
   #MainMenu { display: none; }
 </style>
 """, unsafe_allow_html=True)
-
 
 # ── Model loading (cached) ─────────────────────────────────────────────────────
 @st.cache_resource(show_spinner=False)
